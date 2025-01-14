@@ -1,9 +1,13 @@
-import Home from './pages/home/home'
+import './App.css'
+import Login from './pages/home/login'
 
 function App() {
-    return (
-        <Home />
-    )
+
+  return (
+    <>
+      <Login />
+    </>
+  )
 }
 
 export default App
