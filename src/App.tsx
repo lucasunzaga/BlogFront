@@ -10,6 +10,9 @@ function App() {
                 {/* Página inicial: Login */}
                 <Route path="/" element={<Login />} />
 
+                {/* Página de login */}
+                <Route path="/login" element={<Login />} />
+
                 {/* Página de cadastro */}
                 <Route path="/cadastro" element={<Cadastro />} />
             </Routes>

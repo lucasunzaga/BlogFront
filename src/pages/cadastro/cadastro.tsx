@@ -43,27 +43,38 @@ function Cadastro() {
     setConfirmaSenha(e.target.value)
   }
 
-  async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>){
-    e.preventDefault()
 
-    if(confirmaSenha === usuario.senha && usuario.senha.length >= 8){
+  /*const {id, ...usuarioSemid } = usuario;*/
 
-      setIsLoading(true)
+  /*try{
+    await cadastrarUsuario(`/usuarios/cadastrar`,usuarioSemid,  setUsuario)*/
+  
+  /*async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>){
+    e.preventDefault()*/
 
-      try{
-        await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario)
-        alert('Usuário cadastrado com sucesso!')
-      }catch(error){
-        alert('Erro ao cadastrar o usuário!')
+    async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>) {
+      e.preventDefault()
+  
+      if (confirmaSenha === usuario.senha && usuario.senha.length >= 8) {
+  
+        setIsLoading(true)
+  
+        const { id, ...usuarioSemId } = usuario;
+  
+        try {
+          await cadastrarUsuario('/usuarios/cadastrar', usuarioSemId, setUsuario)
+          alert('Usuário cadastrado com sucesso!')
+        } catch (error) {
+          alert('Erro ao cadastrar o usuário!')
+        }
+      } else {
+        alert('Dados estão inconsistentes. Verifique as informações do cadastro')
+        setUsuario({ ...usuario, senha: '' })
+        setConfirmaSenha('')
       }
-    }else{
-      alert('Dados do usuário inconsistentes! Verifique as informações do cadastro.')
-      setUsuario({...usuario, senha: ''})
-      setConfirmaSenha('')
+  
+      setIsLoading(false)
     }
-
-    setIsLoading(false)
-  }
   
   return (
     <>
