@@ -43,15 +43,6 @@ function Cadastro() {
     setConfirmaSenha(e.target.value)
   }
 
-
-  /*const {id, ...usuarioSemid } = usuario;*/
-
-  /*try{
-    await cadastrarUsuario(`/usuarios/cadastrar`,usuarioSemid,  setUsuario)*/
-  
-  /*async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>){
-    e.preventDefault()*/
-
     async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>) {
       e.preventDefault()
   
