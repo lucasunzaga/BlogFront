@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { consultar } from '../../../services/service';
+import { buscar } from '../../../services/service';
 
 interface Usuario {
   id: number;
@@ -13,7 +13,7 @@ function ListarUsuarios() {
   async function consultarUsuarios() {
 
     try {
-      await consultar('/users', setUsuarios);
+      await buscar('/users', setUsuarios);
     } catch (error: any) {
       alert('Erro!')
     }

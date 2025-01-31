@@ -18,7 +18,7 @@ export const login = async (url: string, dados: Object, setDados: Function) => {
     setDados(resposta.data)
 }
 
-export const consultar = async (url: string, setDados: Function, header: Object = {}) => {
+export const buscar = async (url: string, setDados: Function, header: Object = {}) => {
     const resposta = await api.get(url, header)
     console.log (resposta)
     setDados(resposta.data)
