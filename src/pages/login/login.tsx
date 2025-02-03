@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import './Login.css';
+import './login.css';
 import { AuthContext } from '../../contexts/authcontext';
 import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import UsuarioLogin from '../../models/usuariologin';
