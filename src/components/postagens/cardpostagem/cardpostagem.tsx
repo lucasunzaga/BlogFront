@@ -21,8 +21,8 @@ function CardPostagem({ postagem }: CardPostagensProps) {
                     </h3>
                 </div>
                 <div className='p-4 '>
-                    <h4 className='text-lg font-semibold uppercase'>{postagem.titulo}</h4>
-                    <p>{postagem.texto}</p>
+                    <h4 className='text-lg font-semibold uppercase'>{postagem?.titulo}</h4>
+                    <p>{postagem?.texto}</p>
                     <p>Tema: {postagem.tema?.descricao}</p>
                     <p>Data: {new Intl.DateTimeFormat(undefined, {
                         dateStyle: 'full',
